@@ -10,7 +10,11 @@ env:
 jobs:
   test:
     environment: testing
+    # The environment is now only used to host the image
     runs-on: ubuntu-latest
+    # Jobs will run in the containers
+    container:
+      image: node:16
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb+srv
       MONGODB_CLUSTER_ADDRESS: cluster0.nf5yt.mongodb.net
